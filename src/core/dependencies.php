@@ -22,10 +22,8 @@ $container['db'] = function ($container) {
     return $capsule;
 };
 
+
 $container[Controller::class] = function ($c) use ($container) {
-    return new Controller($container);
-};
-$container[Model::class] = function ($c) use ($container) {
     return new Controller($container);
 };
 
