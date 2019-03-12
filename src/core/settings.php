@@ -1,5 +1,5 @@
 <?php
-return [
+$defaultSettings = [
     'settings' => [
         'displayErrorDetails' => true, // set to false in production
         'addContentLengthHeader' => false, // Allow the web server to send the content-length header
@@ -16,9 +16,17 @@ return [
             'database' => 'lich_cat_nhat',
             'username' => 'admin',
             'password' => 'quangbach1',
-            'charset'   => 'utf8',
+            'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
+            'prefix' => '',
         ]
     ],
+];
+
+$customSettings = require __DIR__ . '/../app/settings.php';
+
+$settings = array_merge($defaultSettings['settings'], $customSettings['settings']);
+
+return [
+    'settings' => $settings
 ];

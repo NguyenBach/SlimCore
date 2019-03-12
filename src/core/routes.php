@@ -1,7 +1,7 @@
 <?php
 
 // Routes
-include '../app/Router/route.php';
+include '../app/Router/routes.php';
 
 $app->group('/api', function () use ($app) {
 
